@@ -173,8 +173,8 @@ func (c *Client) CreateVolume(name string, options map[string]string) (err error
 		fstype = defaultFSType
 	}
 
-	args := []string{"-t", fstype, nbd}
-	if out, err := exec.Command("mkfs", args...).CombinedOutput(); err != nil {
+	mkfscmd := fmt.Sprintf("mkfs.%s", fstype)
+	if out, err := exec.Command(mkfscmd, nbd).CombinedOutput(); err != nil {
 		log.Error("Error running mkfs command: ", err, "{", string(out), "}")
 		err = errors.New(fmt.Sprintf("%s: %s", err, out))
 		return err
