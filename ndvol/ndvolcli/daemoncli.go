@@ -2,7 +2,7 @@ package ndvolcli
 
 import (
 	"github.com/urfave/cli"
-	"github.com/qeas/nvd/nvd/daemon"
+	"github.com/qeas/nedge-docker-volume/ndvol/daemon"
 )
 
 var (
@@ -24,7 +24,7 @@ var (
 			},
 			cli.StringFlag{
 				Name:  "config, c",
-				Usage: "Config file for daemon (default: /opt/nedge/etc/ccow/nvd.json): `[--config /opt/nedge/etc/ccow/nvd.json]`",
+				Usage: "Config file for daemon (default: /opt/nedge/etc/ccow/ndvol.json): `[--config /opt/nedge/etc/ccow/ndvol.json]`",
 			},
 		},
 		Action: cmdDaemonStart,
