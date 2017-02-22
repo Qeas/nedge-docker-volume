@@ -175,9 +175,19 @@ func (c *Client) CreateVolume(name string, options map[string]string) (err error
 
 	mkfscmd := fmt.Sprintf("mkfs.%s", fstype)
 	if out, err := exec.Command(mkfscmd, nbd).CombinedOutput(); err != nil {
-		log.Error("Error running mkfs command: ", err, "{", string(out), "}")
-		err = errors.New(fmt.Sprintf("%s: %s", err, out))
-		return err
+		log.Infp("Error running mkfs command: ", err, "{", string(out), "}")
+		msg := fmt.Sprintf("%s: %s", err, out)
+		if strings.Contains(msg, "executable file not found") {
+			if out, err := exec.Command(mkfscmd, nbd).CombinedOutput(); err != nil {
+				log.Error("Error running mkfs command: ", err, "{", string(out), "}")
+				err = errors.New(fmt.Sprintf("%s: %s", err, out))
+				return err
+			}
+
+		} else {
+			err = errors.New(msg)
+			return err
+		}
 	}
 	return err
 }
