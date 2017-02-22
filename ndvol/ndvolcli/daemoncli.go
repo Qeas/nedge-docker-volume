@@ -2,7 +2,7 @@ package ndvolcli
 
 import (
 	"github.com/urfave/cli"
-	"github.com/sevlyar/go-daemon"
+	"github.com/qeas/nvd/nvd/daemon"
 )
 
 var (
@@ -11,7 +11,6 @@ var (
 		Usage: "daemon related commands",
 		Subcommands: []cli.Command{
 			DaemonStartCmd,
-			DaemonStopCmd,
 		},
 	}
 
@@ -31,7 +30,6 @@ var (
 		Action: cmdDaemonStart,
 	}
 )
-
 
 func cmdDaemonStart(c *cli.Context) {
 	verbose := c.Bool("verbose")
