@@ -2,7 +2,7 @@ package ndvolcli
 
 import (
 	"github.com/urfave/cli"
-	ndvolDaemon "github.com/Nexenta/nedge-docker-volume/ndvol/daemon"
+	ndvolDaemon "github.com/qeas/nedge-docker-volume/ndvol/daemon"
 	"github.com/sevlyar/go-daemon"
 	log "github.com/Sirupsen/logrus"
 	"syscall"

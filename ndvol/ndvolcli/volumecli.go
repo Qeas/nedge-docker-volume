@@ -4,7 +4,7 @@ import (
 	"fmt"
 	log "github.com/Sirupsen/logrus"
 	"github.com/urfave/cli"
-	"github.com/Nexenta/nedge-docker-volume/ndvol/ndvolapi"
+	"github.com/qeas/nedge-docker-volume/ndvol/ndvolapi"
 )
 
 var (

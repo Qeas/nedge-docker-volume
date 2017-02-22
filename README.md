@@ -52,7 +52,7 @@ ndvol binary in your Golang bin directory.
 ## Configuration
 Example config file can be found here:
   ```
-  https://github.com/Nexenta/nedge-docker-volume/blob/master/ndvol/daemon/ndvol.json
+  https://github.com/qeas/nedge-docker-volume/blob/master/ndvol/daemon/ndvol.json
   ```
   
 Default path to config file is
