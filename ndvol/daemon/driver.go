@@ -23,7 +23,7 @@ func DriverAlloc(cfgFile string) NdvolDriver {
 
 	client, _ := ndvolapi.ClientAlloc(cfgFile)
 	d := NdvolDriver{
-		Scope:			"local",
+		Scope:			"global",
 		DefaultVolSz:	1024,
 		Client:         client,
 		Mutex:          &sync.Mutex{},
